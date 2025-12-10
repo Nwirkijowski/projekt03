@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Edytuj wpis</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<h1>Edytuj wpis</h1>
+
+<form action="/edit/<%= id %>" method="post">
+  <input type="text" name="name" value="<%= entry %>" required>
+  <button type="submit">Zapisz</button>
+</form>
+
+<a href="/">⬅ Wróć</a>
+
+</body>
+</html>

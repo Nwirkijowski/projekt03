@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Moja aplikacja Node.js</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Wpisy użytkowników</h1>
+
+<ul>
+  <% entries.forEach((entry, i) => { %>
+    <li>
+      <%= entry %>
+      <a href="/edit/<%= i %>"> Edytuj</a>
+      <form action="/delete/<%= i %>" method="post" style="display:inline;">
+        <button type="submit"> Usuń</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
+
+<h2>Dodaj swój wpis</h2>
+<form action="/submit" method="post">
+  <input type="text" name="name" placeholder="Twoje imię" required>
+  <button type="submit">Wyślij</button>
+</form>
+
+</body>
+</html>
